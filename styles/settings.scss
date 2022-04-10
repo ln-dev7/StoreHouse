@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Poppins:wght@300;400;500;600;700;800;900&family=Grey+Qo&family=Parisienne&family=Roboto:wght@300;400&family=Ubuntu:wght@400;500;700&display=swap');
+
+// Couleurs
+$green: #5bf1d4;
+$yellow: #ffe46e;
+$orange: #f4a455;
+$purple: #9e68f6;
+$dark: #36373b;
+$gray: #e2e2e2;
+$black: #000;
+$white: #fff;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img{
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+body {
+  height: 100vh;
+  background: $white;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

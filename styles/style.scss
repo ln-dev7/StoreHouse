@@ -1,0 +1,292 @@
+@import 'settings';
+
+.container {
+    position: relative;
+
+    .logo {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hexagone {
+        width: 570px;
+        height: 570px;
+        //margin-bottom: 10rem;
+        border-radius: 50px;
+        background: $purple;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-120px) rotate(30deg);
+        z-index: -5;
+        // animation: rotate 5s ease 0s infinite alternate forwards;
+
+        @keyframes rotate {
+            0%{
+                transform: rotate(0);
+            }
+            33%{
+                background: $yellow;
+            }
+            66%{
+                background: $purple;
+            }
+            100%{
+                transform: rotate(-360deg);
+                background: $green;
+            }
+        }
+
+        &-images{
+            &-item{
+                position: relative;
+                img{
+                    width: 500px;
+                }
+                .filter-image{
+                    filter: blur(5px);
+                    z-index: -10;
+                }
+                .main-image{
+                    width: 700px;
+                    position: absolute;
+                    right: -400px;
+                    top: 10px;
+                }
+            }
+        }
+
+        &-title {
+            position: absolute;
+            overflow: hidden;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transform: rotate(-30deg);
+            z-index: 10;
+
+            &-item {
+                margin: 10px;
+
+                h1 {
+                    font-weight: 900;
+                    font-size: 50px;
+                    color: $white;
+                }
+            }
+        }
+
+        &-images {
+            position: absolute;
+        }
+    }
+
+    .shop {
+        height: calc(100vh - 155px);
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .right-shop {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 2rem;
+        }
+
+        &-title {
+            font-weight: 400;
+            font-size: 30px;
+        }
+
+        &-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        &-products {
+            //position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .products-card {
+                //position: absolute;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-shrink: 0;
+            }
+
+            .products-card:nth-child(1) {
+                // transform: translateX(0);
+                // animation: translate1 5s ease 0s infinite;
+            }
+
+            .products-card:nth-child(2) {
+                transform: translateX(200%);
+                // animation: translate2 5s ease 0s infinite;
+            }
+
+            .products-card:nth-child(3) {
+                // transform: translateX(400%);
+                // animation: translate2 5s ease 5s infinite;
+            }
+
+            @keyframes translate1 {
+                0%{
+                    transform: translate(0);
+                }
+                33% {
+                    transform: translateX(-200%);
+                }
+
+                66% {
+                    transform: translateX(200%);
+                }
+
+                100% {
+                    transform: translate(0);
+                }
+            }
+
+            @keyframes translate2 {
+                0%{
+                    transform: translateX(200%);
+                }
+                33% {
+                    transform: translateX(0);
+                }
+
+                66% {
+                    transform: translateX(-200%);
+                }
+
+                100% {
+                    transform: translate(200%);
+                }
+            }
+
+            &-item {
+                width: 100%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.5rem 0;
+
+                h4:first-child {
+                    width: 25%;
+                }
+
+                img{
+                    width: 50px;
+                }
+                img:last-child{
+                    width: 20px;
+                }
+            }
+
+            &-item:nth-child(2n + 1) {
+                background: linear-gradient(to right, $white, rgba($color: $gray, $alpha: .3), rgba($color: $gray, $alpha: .3), $white);
+            }
+        }
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: rgba($color: $black, $alpha: 0.15) 0 1px 50px 0;
+
+        img {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        img:first-child {
+            margin-left: 30px;
+        }
+
+        img:last-child {
+            background: $dark;
+            border-radius: 10px;
+        }
+
+        .line {
+            background: $gray;
+            width: 1px;
+            height: 30px;
+            margin: 0 10px 0 2px;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        padding: 0 20px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(5px);
+
+        &-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                margin: 10px;
+                border-radius: 10px;
+                padding: 10px;
+                transition: .3s ease;
+
+                &:hover {
+                    background: $gray;
+                }
+            }
+
+            img:first-child {
+                background: $gray;
+            }
+
+            .line {
+                width: 30px;
+                height: 1px;
+                background: $gray;
+            }
+        }
+
+        &-right {
+            img {
+                background: $gray;
+                margin: 10px;
+                border-radius: 10px;
+                padding: 10px;
+            }
+        }
+    }
+}
+
